@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirect</title>
+    <script>
+        // Получаем параметр "url" из строки запроса
+        const v2rayUrl = new URLSearchParams(window.location.search).get('url');
+        if (v2rayUrl) {
+            // Перенаправляем пользователя на v2raytun://
+            window.location.href = `v2raytun://import-config?url=${v2rayUrl}`;
+        } else {
+            // Если параметра нет, отображаем сообщение об ошибке
+            document.body.innerText = "URL parameter is missing or invalid.";
+        }
+    </script>
+</head>
+<body>
+    <p>Redirecting...</p>
+</body>
+</html>
